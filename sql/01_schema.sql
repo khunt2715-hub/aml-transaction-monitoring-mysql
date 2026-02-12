@@ -32,7 +32,9 @@ CREATE TABLE transactions (
     amount DECIMAL(18,2),
     counterparty_country VARCHAR(50),
     counterparty_name VARCHAR(100),
-    is_cash BOOLEAN,
+    is_cash BOOLEAN DEFAULT 0,   -- UPDATED
+    is_high_risk BOOLEAN DEFAULT 0,   -- NEW
+    is_sanctions_hit BOOLEAN DEFAULT 0,   -- NEW
     FOREIGN KEY (account_id) REFERENCES accounts(account_id)
 );
 
